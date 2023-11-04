@@ -1,70 +1,116 @@
-# Getting Started with Create React App
+### 一、 项目技术栈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. ### 前端：React18 + React hooks + React-router-dom + Reac-Redux 状态管理库 + Antd Design + Echarts
 
-## Available Scripts
+2. ### 后端：Axios + Express + Mysql 数据库 + Sequelize + jsonwebtoken 
 
-In the project directory, you can run:
+### 二、项目亮点
 
-### `npm start`
+1. ### 使用 React-Redux 对用户信息进行状态管理
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. ### 使用 React-router-dom 对路由进行判断，用户权限处理
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+3. ### 封装 axios， 对后端 api 进行集中统一管理
 
-### `npm test`
+4. ### 利用 Echarts 实时展示当地空气温度，空气质量等级等
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+5. ### 使用 UseState 对 Echats 进行随时增，删，改
 
-### `npm run build`
+6. ### 使用 Sequelize 对数据库进行查询
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+7. ### 使用 jsonwebtoken 对用户密码信息进行 token 处理
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 三、项目运行
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. ```shell
+   npm init
+   ```
 
-### `npm run eject`
+2. ```shell
+   npm run start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 四、项目依赖包
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. ### 前端依赖
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. ``` shell 
+   npx create-react-app my-app --template typescript
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. ```shell
+   npm install react-redux
+   npm install @reduxjs/toolkit
+   ```
 
-## Learn More
+3. ```shell
+   npm install react-router-dom
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. ```shell
+   npm install axios
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+5. ```shell
+   npm install antd --save
+   npm install @ant-design/icons --save
+   ```
 
-### Code Splitting
+7. ```shell
+   npm install echarts
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+8. ```shell
+   npm install normalize.css --save
+   ```
 
-### Analyzing the Bundle Size
+9. react 项目配置路径别名
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+   ```shell
+   npm i @craco/craco -D
+   
+   在根路径创建文件craco.config.js,和package.json同级
+   
+   const path = require("path");
+   module.exports = {
+     webpack: {
+       alias: {
+         "@": path.resolve(__dirname, "./src"),
+       },
+     },
+   };
+   
+   修改package.json文件
+   "scripts": {
+     //"start": "react-scripts start", // 删除
+     //"build": "react-scripts build",// 删除
+     //"test": "react-scripts test",// 删除
+     "start": "craco start", // 添加
+      "build": "craco build"// 添加
+      "test": "craco test"// 添加
+   }
+   ```
 
-### Making a Progressive Web App
+1. ### 后端依赖
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. ```shell
+   npm init
+   ```
 
-### Advanced Configuration
+2. ```shell
+   npm install express
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+3. ```shell
+   npm install --save sequelize 
+   ```
 
-### Deployment
+4. ```shell
+   npm install --save mysql2
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+5. ```shell
+   npm install jsonwebtoken
+   ```
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   
