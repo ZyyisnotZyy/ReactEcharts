@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import { Layout, Menu, theme, Popconfirm } from "antd";
 import {
-  LogoutOutlined,
+  PoweroffOutlined,
   LineChartOutlined,
   PieChartOutlined,
   RadarChartOutlined,
@@ -71,7 +71,7 @@ const Home = () => {
               cancelText="取消"
               onConfirm={onConfirm}
             >
-              <LogoutOutlined /> 退出
+              <PoweroffOutlined /> 退出
             </Popconfirm>
           </span>
         </div>

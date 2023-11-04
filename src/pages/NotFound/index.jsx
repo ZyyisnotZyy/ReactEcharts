@@ -1,5 +1,6 @@
+import "./index.css";
 const NotFound = () => {
-  return <>404</>;
+  return <></>;
 };
 
 export default NotFound;

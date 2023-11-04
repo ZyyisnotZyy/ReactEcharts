@@ -50,7 +50,7 @@ const Login = () => {
     <>
       <Row justify="center" align="middle" style={{ minHeight: "100vh" }}>
         <Col span={10}>
-          <Card title="用户登录" extra="去注册">
+          <Card title="用户登录" extra={<a href="/register">去注册</a>}>
             <Form
               name="basic"
               labelCol={{ span: 6 }}
