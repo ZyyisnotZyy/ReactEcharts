@@ -2,7 +2,7 @@
 
 1. ### 前端：React18 + React hooks + React-router-dom + Reac-Redux 状态管理库 + Antd Design + Echarts
 
-2. ### 后端：Axios + Express + Mysql 数据库 + Sequelize + jsonwebtoken 
+2. ### 后端：Axios + Express + Mysql 数据库 + Sequelize + JsonWebToken 
 
 ### 二、项目亮点
 
@@ -10,7 +10,7 @@
 
 2. ### 使用 React-router-dom 对路由进行判断，用户权限处理
 
-3. ### 封装 axios， 对后端 api 进行集中统一管理
+3. ### 封装 Axios， 对后端 api 进行集中统一管理
 
 4. ### 利用 Echarts 实时展示当地空气温度，空气质量等级等
 
@@ -18,7 +18,7 @@
 
 6. ### 使用 Sequelize 对数据库进行查询
 
-7. ### 使用 jsonwebtoken 对用户密码信息进行 token 处理
+7. ### 使用 JsonWebToken 对用户密码信息进行 token 处理
 
 ### 三、项目运行
 
