@@ -8,7 +8,7 @@
 
 1. ### 使用 React-Redux 对用户信息进行状态管理
 
-2. ### 使用 React-router-dom 对路由进行判断，用户权限处理
+2. ### 使用 React-router-dom 路由管理
 
 3. ### 封装 Axios， 对后端 api 进行集中统一管理
 
@@ -20,6 +20,8 @@
 
 7. ### 使用 JsonWebToken 对用户密码信息进行 token 处理
 
+7. ### Node Express 对用户权限处理，判断用户 token 是否存在等条件
+
 ### 三、项目运行
 
 1. ```shell
@@ -30,12 +32,34 @@
    npm run start
    ```
 
-### 四、项目依赖包
+### 四、项目部分运行截图
+
+1. ### 登录
+
+   ![登录](https://picst.sunbangyan.cn/2023/11/05/71e3dd982c3f993adc7e9f16b4e9887a.png)
+
+2. ### 注册
+
+   ![注册](https://picss.sunbangyan.cn/2023/11/05/398950c8fec476e62ccd371ba79870c0.png)
+
+3. 每日天气预报
+
+   ![每日天气预报](https://picst.sunbangyan.cn/2023/11/05/95918e93813bf4ea9c910b51982c2e2d.png)
+
+4. 实时编辑 Echarts 图表
+
+   ![实时编辑Echats图表](https://picst.sunbangyan.cn/2023/11/05/008e9a7f4d1183d83a33b80114904439.png)
+
+5. 空气质量预报
+
+   ![空气质量预报](https://picdl.sunbangyan.cn/2023/11/05/3fdf734f4cedf81be0391cafa966df2c.png)
+
+### 五、项目依赖包
 
 1. ### 前端依赖
 
 1. ``` shell 
-   npx create-react-app my-app --template typescript
+   npx create-react-app my-app 
    ```
 
 2. ```shell
