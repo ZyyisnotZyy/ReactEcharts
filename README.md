@@ -1,8 +1,8 @@
 ### 一、 项目技术栈
 
-1. ### 前端：React18 + React hooks + React-router-dom + Reac-Redux 状态管理库 + Antd Design + Echarts
+1. ### 前端：React18 + React Hooks + React-router-dom + React-Redux 状态管理库 + Axios + Ant Design + Echarts
 
-2. ### 后端：Axios + Express + Mysql 数据库 + Sequelize + JsonWebToken 
+2. ### 后端：Node Express + Mysql 数据库 + Sequelize + JsonWebToken 
 
 ### 二、项目亮点
 
