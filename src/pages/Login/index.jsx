@@ -1,9 +1,10 @@
-import { Navigate, useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { Row, Col, Button, Card, Form, Input, message } from "antd";
-import { setStorage, getStorage } from "@/utils/index";
+import { setStorage } from "@/utils/index";
 import { setUserInfo, setUserToken } from "@/store/modules/user";
 import UserLogin from "@/apis/UserLogin";
+import AuthorityApi from "@/apis/AuthorityApi";
 import "./index.css";
 
 const Login = () => {
@@ -11,36 +12,44 @@ const Login = () => {
   const navigate = useNavigate();
   // redux 中的 UserInfo
   const dispatch = useDispatch();
-  // 获取当前 Url 路径
-  const location = useLocation();
-  // 判断如果当前路径是 /login 并且还有 token 就直接跳转到 / 首页
-  if (location.pathname === "/login" && getStorage("userToken")) {
-    return <Navigate to="/" replace />;
-  }
+
   // 用户登录
   const onFinish = (values) => {
-    const { username, password } = values;
-    let personInfo = {
-      username,
-      password,
-    };
-    const getUser = async () => {
-      const result = await UserLogin(personInfo);
-      if (result) {
-        message.success("登陆成功");
+    // 这里重写路由权限
+    const AuthFn = async () => {
+      //	表单中获取 username password
+      const { username, password } = values;
+      let personInfo = {
+        username,
+        password,
+      };
+      const resultLogin = await UserLogin(personInfo);
+      if (resultLogin) {
+        var userToken = resultLogin.data.data.token;
+      }
+      let endData = {
+        username,
+        password,
+        userToken,
+      };
+      const resultAuthority = await AuthorityApi(endData, userToken);
+      if (resultLogin && resultAuthority) {
+        const { username, password, userToken } = resultAuthority.data.msg;
         // 设置 localStorage 存储 token
-        setStorage("userToken", result.data.data.token);
-        navigate("/");
+        setStorage("userToken", userToken);
         // 调用 dispatch 存入 用户名 密码
-        dispatch(setUserInfo(values));
-        // 调用 dispatch 存入 token
-        dispatch(setUserToken(getStorage("userToken")));
+        dispatch(setUserInfo({ username, password }));
+        // react-redux 调用 dispatch 存入 token
+        dispatch(setUserToken(userToken));
+        message.success("登陆成功");
+        navigate("/");
       } else {
-        message.error("用户名或密码不存在");
+        message.error("用户名或密码错误");
       }
     };
-    getUser();
+    AuthFn();
   };
+
   // 表单重置
   const onReset = () => {
     form.resetFields();
