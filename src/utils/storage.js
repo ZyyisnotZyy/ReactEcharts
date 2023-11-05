@@ -10,7 +10,3 @@ export const setStorage = (key, val) => {
 export const rmStorage = (key) => {
   localStorage.removeItem(key);
 };
-// 删除全部 Storage
-export const clsStorage = () => {
-  localStorage.clear();
-};

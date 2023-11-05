@@ -2,5 +2,5 @@
 import request from "./request";
 // 后端工具
 import serve from "./serve";
-import { getStorage, setStorage, rmStorage, clsStorage } from "@/utils/storage";
-export { request, serve, getStorage, setStorage, rmStorage, clsStorage };
+import { getStorage, setStorage, rmStorage } from "@/utils/storage";
+export { request, serve, getStorage, setStorage, rmStorage };
