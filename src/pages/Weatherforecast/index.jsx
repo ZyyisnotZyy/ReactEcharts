@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
 import { Breadcrumb } from "antd";
-import { henWeatherF } from "@/apis/Weatherforecast";
+import henWeatherF from "@/apis/Weatherforecast";
 // 郑州市每日天气预报 7 天
 const Weatherforecast = () => {
   // 最终展示郑州市数据 数组

@@ -20,7 +20,7 @@ import {
   SyncOutlined,
   ExclamationCircleFilled,
 } from "@ant-design/icons";
-import { AirqualityApi } from "@/apis/AirqualityApi";
+import AirqualityApi from "@/apis/AirqualityApi";
 import "./index.css";
 const Airquality = () => {
   // api 数组列表

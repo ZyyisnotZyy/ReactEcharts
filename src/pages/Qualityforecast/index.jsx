@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as echarts from "echarts";
 import { Breadcrumb } from "antd";
-import { QualityforecastApi } from "@/apis/QualityforecastApi";
+import QualityforecastApi from "@/apis/QualityforecastApi";
 
 const Qualityforecast = () => {
   // 数据数组化
