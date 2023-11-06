@@ -27,7 +27,7 @@
 ### 三、项目运行
 
 1. ```shell
-   npm init
+   npm install
    ```
 
 2. ```shell
