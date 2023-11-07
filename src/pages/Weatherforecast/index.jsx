@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import * as echarts from "echarts";
 import { Breadcrumb } from "antd";
 import henWeatherF from "@/apis/Weatherforecast";
@@ -298,6 +299,18 @@ const Weatherforecast = () => {
 
     option && myChart.setOption(option);
   }, [hqpieList]);
+
+  // 每次切换路由 销毁 Echarts
+  const location = useLocation();
+  const { pathname } = location;
+  useEffect(() => {
+    return () => {
+      // 清空引用
+      weather.current = null;
+      hqpie.current = null;
+    };
+  }, [pathname]);
+
   return (
     <>
       <Breadcrumb
