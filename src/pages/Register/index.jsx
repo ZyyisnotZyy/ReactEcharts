@@ -1,9 +1,10 @@
 import { Button, Form, Input, Row, Col, Card, message } from "antd";
 
 import UserRegister from "@/apis/UserRegister";
+import { useNavigate } from "react-router-dom";
 const Register = () => {
   const [form] = Form.useForm();
-
+  const navigate = useNavigate();
   const onFinish = (values) => {
     const { RegisterUserName, RegisterUserPassword } = values;
     let data = {
@@ -15,7 +16,10 @@ const Register = () => {
       const result = await UserRegister(data);
       // 注册成功
       if (result) {
-        message.success("用户注册成功");
+        message.success("用户注册成功,5秒后跳转到登录页");
+        setTimeout(() => {
+          navigate("/login");
+        }, 5000);
       } else {
         // 用户名已存在
         message.error("该用户已存在");
