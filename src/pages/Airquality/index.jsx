@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import * as echarts from "echarts";
 import {
   Breadcrumb,
@@ -22,6 +22,7 @@ import {
   ExclamationCircleFilled,
 } from "@ant-design/icons";
 import AirqualityApi from "@/apis/AirqualityApi";
+import { rmStorage, getStorage } from "@/utils/index";
 import "./index.css";
 const Airquality = () => {
   // api 数组列表
@@ -253,6 +254,19 @@ const Airquality = () => {
       airPie.current = null;
     };
   }, [pathname]);
+
+  const naviaget = useNavigate();
+  // 监听 localStorage 的变化
+  window.addEventListener("storage", (event) => {
+    if (event.key === "userToken") {
+      // localStorage 发生变化 ==>  清除 userToken 跳转登录页
+      if (pathname === "/login" || getStorage("userToken")) {
+        rmStorage("userToken");
+        return naviaget("/login");
+      }
+      rmStorage("userToken");
+    }
+  });
 
   return (
     <>

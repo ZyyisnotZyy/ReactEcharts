@@ -8,7 +8,7 @@ import {
   PieChartOutlined,
   RadarChartOutlined,
 } from "@ant-design/icons";
-import { rmStorage } from "@/utils/index";
+import { rmStorage, getStorage } from "@/utils/index";
 import { clearUserInfo, clearUserToken } from "@/store/modules/user";
 import "./index.css";
 
@@ -53,6 +53,19 @@ const Home = () => {
     // 跳转到 login
     navigate("/login");
   };
+
+  const naviaget = useNavigate();
+  // 监听 localStorage 的变化
+  window.addEventListener("storage", (event) => {
+    if (event.key === "userToken") {
+      // localStorage 发生变化 ==>  清除 userToken 跳转登录页
+      if (pathname === "/login" || getStorage("userToken")) {
+        rmStorage("userToken");
+        return naviaget("/login");
+      }
+      rmStorage("userToken");
+    }
+  });
   return (
     <Layout
       style={{

@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import * as echarts from "echarts";
 import { Breadcrumb } from "antd";
 import QualityforecastApi from "@/apis/QualityforecastApi";
+import { rmStorage, getStorage } from "@/utils/index";
 
 const Qualityforecast = () => {
   // 数据数组化
@@ -168,6 +169,18 @@ const Qualityforecast = () => {
     };
   }, [pathname]);
 
+  const navigate = useNavigate();
+  // 监听 localStorage 的变化
+  window.addEventListener("storage", (event) => {
+    if (event.key === "userToken") {
+      // localStorage 发生变化 ==>  清除 userToken 跳转登录页
+      if (pathname === "/login" || getStorage("userToken")) {
+        rmStorage("userToken");
+        return navigate("/login");
+      }
+      rmStorage("userToken");
+    }
+  });
   return (
     <>
       <Breadcrumb
