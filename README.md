@@ -36,25 +36,13 @@
 
 ### 四、项目部分运行截图
 
-1. ### 登录
+1. ### 每日天气预报
 
-   ![登录](https://picst.sunbangyan.cn/2023/11/05/71e3dd982c3f993adc7e9f16b4e9887a.png)
+   ![1.png](https://img2.imgtp.com/2024/03/20/u38NLtDF.png)
 
-2. ### 注册
+2. ### 实时编辑 Echarts 图表
 
-   ![注册](https://picss.sunbangyan.cn/2023/11/05/398950c8fec476e62ccd371ba79870c0.png)
-
-3. ### 每日天气预报
-
-   ![每日天气预报](https://picst.sunbangyan.cn/2023/11/05/95918e93813bf4ea9c910b51982c2e2d.png)
-
-4. ### 实时编辑 Echarts 图表
-
-   ![实时编辑Echats图表](https://picst.sunbangyan.cn/2023/11/05/008e9a7f4d1183d83a33b80114904439.png)
-
-5. ### 空气质量预报
-
-   ![空气质量预报](https://picdl.sunbangyan.cn/2023/11/05/3fdf734f4cedf81be0391cafa966df2c.png)
+   ![2.png](https://img2.imgtp.com/2024/03/20/QX396VAk.png)
 
 ### 五、项目依赖包
 
