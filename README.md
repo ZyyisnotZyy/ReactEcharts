@@ -38,11 +38,13 @@
 
 1. ### 每日天气预报
 
-   ![1.png](https://img2.imgtp.com/2024/03/20/u38NLtDF.png)
+   ![](https://gitee.com/zyyisnotzyy/imgbed/raw/master/1.png)
+
+   
 
 2. ### 实时编辑 Echarts 图表
 
-   ![2.png](https://img2.imgtp.com/2024/03/20/QX396VAk.png)
+   ![](https://gitee.com/zyyisnotzyy/imgbed/raw/master/2.png)
 
 ### 五、项目依赖包
 
